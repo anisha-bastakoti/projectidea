@@ -1,13 +1,15 @@
 .body{
-    margin: 0;
-    padding: 0;
+    margin:10px;
+    padding:0px;
+     
+
 }
       
-.container {
-  width: 100%;
+.container-fluid{
+    background-color: black;
+  width: 1500px;
   height: 90px;
-  margin: 0 auto;
-  background-color: rgba(0,0,0,0.6);
+  
   padding: 0 100px;
 box-sizing: border-box;}
 
@@ -26,10 +28,31 @@ box-sizing: border-box;}
 .navbar-nav .dropdown  .dropdown-item:hover{
     background-color:plum;
 }
-.carosel{
-    height: 500px;
-    margin-top: 30px;
+.navbar-nav .nav-item:hover{
+    background-color:plum;
 }
+
+.carousel .carousel-item {
+    width: 100%;
+    height: 90vh;
+    background-size: cover;
+    background-position: center;
+}
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    width: 10px;
+    height: 10px;
+}
+.row {
+    
+    background-color: black;
+}
+.row h2{
+    color: white;
+}
+.row p{
+    color: white;
+}
+
 
 
 
