@@ -2,9 +2,9 @@ const express =require('express');
 const morgan =require('morgan');
 const app =express();
 const path =require('path');
-const debug=require('debug');
 const nodemon =require('nodemon');
 const exp = require('constants');
+
 
 
 app.use(express.static('public'))//sabi kura publuc bata line ho 
@@ -25,8 +25,15 @@ app.get('/',function(req,res){
 const homeRoute= require('./routes/homepage');
 app.use('/homepage',homeRoute);
 
+const loginRoute= require('./routes/login');
+app.use('/login',loginRoute);
 
 
+
+//bodyparser
+
+
+//express layout
 
 //to run port 
 const PORT= process.env.PORT||3000
