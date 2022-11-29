@@ -28,6 +28,8 @@ app.use('/homepage',homeRoute);
 const loginRoute= require('./routes/login');
 app.use('/login',loginRoute);
 
+const RegRoute= require('./routes/Register');
+app.use('/Register',RegRoute);
 
 
 //bodyparser
