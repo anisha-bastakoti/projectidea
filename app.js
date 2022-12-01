@@ -4,7 +4,9 @@ const app =express();
 const path =require('path');
 const nodemon =require('nodemon');
 const exp = require('constants');
-
+const bodyparser=require('body-parser');
+const session=require('express-session');
+const{v4:uuidv4}=require('uuid');
 
 
 app.use(express.static('public'))//sabi kura publuc bata line ho 
@@ -32,10 +34,27 @@ const RegRoute= require('./routes/Register');
 app.use('/Register',RegRoute);
 
 
-//bodyparser
+//bodyparser for login
+app.use(bodyparser.urlencoded({extended:true}));
+app.use(bodyparser.json());
+app.post('/login',(res,req )=>{
+    res.render(req.body);
+})
 
 
-//express layout
+//bodyparser for register(for miidleware)
+app.use(bodyparser.urlencoded({extended:true}));
+app.use(bodyparser.json());
+app.post('/register',(res,req)=>{
+res.render(req.body);
+})
+
+//for session 
+app.use(session({
+secret:uuidv4(),
+resave:true,
+saveUninitialized:true,
+}))
 
 //to run port 
 const PORT= process.env.PORT||3000

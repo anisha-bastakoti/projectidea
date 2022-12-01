@@ -16,7 +16,9 @@
     "expres": "^0.0.5",
     "express": "^4.18.2",
     "express-layout": "^0.1.0",
+    "express-session": "^1.17.3",
     "morgan": "^1.10.0",
-    "nodemon": "^2.0.20"
+    "nodemon": "^2.0.20",
+    "uuid": "^9.0.0"
   }
 }
