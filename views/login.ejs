@@ -1,4 +1,4 @@
-<%-include('./partial/header');-%>
+<%-include('./partial/meta');-%>
 <%-include('./partial/css'); -%>
 
 <body >
@@ -20,7 +20,7 @@
 		</div>
 	</div>
 	
-	
+	<form action='/login' method="post">
 		<div class="right">
 		<h5>Login</h5>
 		<p>Don't have an account? <a href="./Register">Creat Your Account</a> it takes less than a minute</p>
@@ -40,16 +40,18 @@
 	</label>
 			<a href="#">forget password?</a>
 		</div>
-			<form action="login" method="POST">
+	
 			
 			<br>
-			<button ><a>login</a></button>
+			<button><a href="" class="text-white text-decortion-none">login</a></button>
 			</form>
 
 	</div>
 	
 </div>
 <!-- partial -->
+<%-include('./partial/js');-%>
+
   
 </body>
 </html>

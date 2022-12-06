@@ -1,4 +1,4 @@
-<%-include('./partial/header');-%>
+<%-include('./partial/meta');-%>
 <%-include('./partial/css'); -%>
 
 <body >
@@ -24,13 +24,12 @@
 		<div class="right">
 		<h5>Register Here!</h5>
 		
-		<div class="inputs">
-			<input type="text" placeholder="First Name ">
-            <input type="text" placeholder="Last Name">
-            <input type="text" placeholder="Email">
+		<div class="inputs" action="/register" method="post">
+			<input type="text" placeholder="Name ">
+            <input type="text " required placeholder="Email">
 			<br>
 			<input type="password" placeholder="password">
-            <input type="Reset-password" placeholder="Reset password">
+            <input type="Reset-password" placeholder="Re password">
 		</div>
 			
 			<br><br>
@@ -47,7 +46,7 @@
 		</div>
        
 			<br>
-			<button action="register" method="post">Register </button>
+			<button> <a href=" " class="text-white" action="register" >Register</a></button>
 	</div>
 	
 </div>
