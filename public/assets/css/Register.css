@@ -1,12 +1,4 @@
-body {
-
-  
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    font-family: "Open Sans", sans-serif;
-    color: #333333;
-  }
+@import url('https://fonts.googleapis.com/icon?family=Material+Icons');
   
   .box-form {
     margin: 0 auto;
@@ -38,6 +30,17 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     overflow: hidden;
+  }
+  .box-form .left p{
+    position: relative;
+    top:9vh;
+  
+  }
+  .box-form .left span{
+    position: relative;
+    top:12vh;
+    font-size:2vh;
+    color: #B0B3B9;
   }
   .box-form .left .overlay {
     padding: 30px;
@@ -79,6 +82,25 @@ body {
     font-size: 14px;
     color: #B0B3B9;
   }
+  .box-form .right span {
+    position:absolute;
+      color: #B0B3B9;
+      margin: 0 40px;
+    right:11rem;
+    transform: translate(0,200%);
+    cursor: pointer;
+  
+  }
+  .box-form .right span1 {
+    position:absolute;
+      color: #B0B3B9;
+      margin: 0 40px;
+    right:11rem;
+    transform: translate(0,-85%);
+  cursor: pointer;
+  }
+
+
   .box-form .right .inputs {
     overflow: hidden;
   }
@@ -91,6 +113,19 @@ body {
     outline: none;
     border-bottom: 2px solid #B0B3B9;
   }
+  input[type=text]{
+    position: relative;
+    top: 1vh;
+  }
+  input[type=password]{
+    position: relative;
+    top: 1vh;
+  }
+  input[type=re-password]{
+    position: relative;
+    top: 1vh;
+  }
+
   .box-form .right .remember-me- {
     display: flex;
     justify-content: space-between;
@@ -107,7 +142,8 @@ display: flex;
     font-size: 16px;
     padding: 12px 35px;
     border-radius: 50px;
-    
+    position: relative;
+    bottom:-9vh;
     display: inline-block;
     border: 0;
     outline: 0;
@@ -154,11 +190,12 @@ display: flex;
     position: relative;
     cursor: pointer;
     transition: all 0.2s linear;
+    
   }
-  
   label input[type="checkbox"] {
     display: none;
   }
+  
 
 
 

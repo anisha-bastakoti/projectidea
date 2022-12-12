@@ -38,45 +38,63 @@ app.use('/login',loginRoute);
 const RegRoute= require('./routes/Register');
 app.use('/Register',RegRoute);
 
+const admroute= require('./routes/admin');//rotues ko name halne 
+app.use('/admin',admroute);
+
+
 
 
 //bodyparser for login
+app.get('/', function(req, res){
+    res.render("login")
+});
 app.use(bodyparser.urlencoded({extended:true}));
-app.use(bodyparser.json());
+app.use((bodyparser.json()));
 
-app.post('/login',(res,req)=>{
-
-    var email= req.body.email;
-    var password =req.body.password;
-    if (email && password) {
-		// Execute SQL query that'll select the account from the database based on the specified username and password
-		connection.query('SELECT * FROM login WHERE user_email = ? AND user_password = ?', [email, password], function(error, results, fields) {
-			// If there is an issue with the query, output the error
+app.post('/login',(req,res)=>{
+var email=req.body.email;
+var password = req.body.password;
+var sql="INSERT INTO login(user_email,user_password) VALUES('"+email+"','"+password+"')";
+		db.query(sql,(error,result)=>{
 			if (error) throw error;
-			// If the account exists
-			if (results.length > 0) {
-				// Authenticate the user
-				request.session.loggedin = true;
-				request.session.username = username;
-				// Redirect to home page
-				response.redirect('/homepage');
-			} else {
-				response.send('Incorrect Username and/or Password!');
-			}			
-			response.end();
+		res.send('login record sucessfully'+result.insertId);
 		});
-	} else {
-		response.send('Please enter Username and Password!');
-		response.end();
-	}
-    
-    });
 
 
+});
 
 
-//bodyparser for register(for miidleware)
+//bodyparser for admin(for miidleware)
+app.get('/',(req,res)=>{
+	req.render('admin')
+});
+app.post('/admin',(req,res)=>{
+	var email=req.body.email;
+	var password=req.body.password;
+	
+		var sql="INSERT INTO admin(admin_email,admin_password) VALUES('"+email+"','"+password+"')";
+		db.query(sql,(error,result)=>{
+			if (error) throw error;
+		res.send('admin record sucessfully'+result.insertId);
+		});
 
+});
+
+//bodyparser for register
+app.get('/',(req,res)=>{
+	res.render('register');
+})
+app.post('/register',(req,res)=>{
+	var name= req.body.name;
+	var email= req.body.email;
+	var password= req.body.password;
+	var repassword= req.body.repassword;
+	var sql="INSERT INTO register(name,email,password,re_password) VALUES('"+name+"','"+ email+"','"+password+"','"+repassword+"')";
+	db.query(sql,(error,result)=>{
+		if (error) throw error;
+		res.send("sucesfully register"+result.insertId);
+	})
+});
 
 //for session 
 app.use(session({
@@ -86,6 +104,7 @@ saveUninitialized:true,
 }))
 
 const db=require('./routes/dbconnect');
+const bodyParser = require('body-parser');
 
 //mysql connction
 

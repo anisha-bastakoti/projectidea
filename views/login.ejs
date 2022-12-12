@@ -15,43 +15,46 @@
       <br>
       Clothe Crusie is reinventing a wholly modern
       <br> approach to fashion.
-			
-		</span>
-		</div>
-	</div>
+	</span>
+</div>
+</div>
+<div class="right">
+	<h5>Login</h5>
+	<p>Don't have an account? <a href="./Register">Creat Your Account</a> it takes less than a minute</p>
+	<div class="inputs">
 	
-	<form action='/login' method="post">
-		<div class="right">
-		<h5>Login</h5>
-		<p>Don't have an account? <a href="./Register">Creat Your Account</a> it takes less than a minute</p>
-		<div class="inputs">
-			<input type="text" placeholder="Email">
-			<br>
-			<input type="password" placeholder="password">
+	<form  action='/login' method="POST">
+
+			 <span>email</span><input type="text" name="email" placeholder="Email"> 
+			<br><br>
+			<i class="bi bi-eye-slash" id="togglePassword"></i>
+			<span>password</span> <input type="password" name="******" placeholder="password">
 		</div>
 			
 			<br><br>
+			<button text="summit" value="summit">
+				login
+			</button>
 			
-		<div class="remember-me--forget-password">
+			<div class="remember-me--forget-password">
 				<!-- Angular -->
-	<label>
-		<input type="checkbox" name="item" checked/>
-		<span class="text-checkbox">Remember me</span>
-	</label>
+	
 			<a href="#">forget password?</a>
 		</div>
 	
-			
-			<br>
-			<button><a href="" class="text-white text-decortion-none">login</a></button>
-			</form>
-
-	</div>
+		</div>
 	
-</div>
+
+
+
+
 <!-- partial -->
 <%-include('./partial/js');-%>
 
-  
+
 </body>
 </html>
+
+
+		
+

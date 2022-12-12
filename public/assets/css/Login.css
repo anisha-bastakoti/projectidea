@@ -67,42 +67,52 @@ body {
     .box-form .right {
       width: 100%;
     }
+  
   }
-  .box-form .right h5 {
-    font-size: 1cm;
-    text-align: center;
-    line-height: 0;
-  }
-  .box-form .right p {
-  position: relative;
-  top: 30px;
-    font-size: 14px;
-    color: #B0B3B9;
-  }
+
   .box-form .right .inputs {
-    overflow: hidden;
-  }
-  .box-form .right input {
     width: 100%;
     padding: 10px;
     margin-top: 25px;
     font-size: 16px;
-    border: none;
-    outline: none;
-    border-bottom: 2px solid #B0B3B9;
+    display: inline;
+
   }
+  .box-form .right.input{
+    display: block;
+    margin-bottom: 3rem;
+    padding: 12px 20px;
+     margin: 8px 0;
+  }
+  input[type=text]{
+   position: relative;
+   bottom:4vh;
+  }
+   input[type =password ]{
+    position: relative;
+    bottom: 4vh;
+   }
+
   .box-form .right .remember-me--forget-password {
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
-  .box-form .right .remember-me--forget-password input {
+  .box-form .right .remember-me--forget-password a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    top:-3rem;
+  }
+  .box-form .right .remember-me--forget-password .input {
     margin: 0;
     margin-right: 7px;
     width: auto;
   }
   .box-form .right button {
-
+    position: relative;
+    bottom: 5vh;
     color: #fff;
     font-size: 16px;
     padding: 12px 35px;
@@ -113,48 +123,7 @@ body {
     box-shadow: 0px 4px 20px 0px #49c628a6;
     background-image: linear-gradient(135deg, #70F570 10%, #49C628 100%);
   }
-  
-  label {
-    display: block;
-    position: relative;
-    margin-left: 30px;
-  }
-  
-  label::before {
-    content: ' \f00c';
-    position: absolute;
-    font-family: FontAwesome;
-    background: transparent;
-    border: 3px solid #70F570;
-    border-radius: 4px;
-    color: transparent;
-    left: -30px;
-    transition: all 0.2s linear;
-  }
-  
-  label:hover::before {
-    font-family: FontAwesome;
-    content: ' \f00c';
-    color: #fff;
-    cursor: pointer;
-    background: #70F570;
-  }
-  
-  label:hover::before .text-checkbox {
-    background: #70F570;
-  }
-  
-  label span.text-checkbox {
-    display: inline-block;
-    height: auto;
-    position: relative;
-    cursor: pointer;
-    transition: all 0.2s linear;
-  }
-  
-  label input[type="checkbox"] {
-    display: none;
-  }
+
 
 
 

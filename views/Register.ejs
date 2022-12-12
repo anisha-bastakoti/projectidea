@@ -23,34 +23,29 @@
 	
 		<div class="right">
 		<h5>Register Here!</h5>
-		
-		<div class="inputs" action="/register" method="post">
-			<input type="text" placeholder="Name ">
-            <input type="text " required placeholder="Email">
+	<form  action="/register" method="POST">
+		<p>name</p><input type="text" name="name" placeholder="Name " >
+           <p>email</p><input type="text "   name="email" required placeholder="Email" >
 			<br>
-			<input type="password" placeholder="password">
-            <input type="Reset-password" placeholder="Re password">
-		</div>
+			<p>password</p> <input type="password" id="mypwd" name="password" placeholder="8 to 16 character" minlength="8" maxlength="16">
 			
-			<br><br>
-			
-		<div class="remember-me-">
-				<!-- Angular -->
-	<label>
-		<input type="checkbox" name="item" checked/>
-		<span class="text-checkbox">Remember me</span>
-	</label>
-    
-    
-  
-		</div>
-       
-			<br>
-			<button> <a href=" " class="text-white" action="register" >Register</a></button>
-	</div>
 	
-</div>
-<!-- partial -->
-  
-</body>
-</html>
+           <p>confrim password</p><input  id ="mypwd" type="password" name=" password" placeholder="8 to 16 character"minlength="8" maxlength="16">
+		
+			<button text="summit"  id="summit" value="summit">Register</a>
+			</button>
+		</form>
+		<br><br>
+			
+		
+       
+	</div>
+	<!-- partial -->
+	  <%-include('./partial/js');-%>
+	</body>
+	</html>		
+
+    
+
+	
+
